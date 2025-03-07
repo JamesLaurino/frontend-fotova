@@ -3,8 +3,13 @@ import ProductList from "./page/product-list";
 import {Route,Switch,BrowserRouter as Router} from "react-router-dom";
 import ProductDetail from "./page/product-detail";
 import NavbarComponent from "./share/navabar-component";
-import pageNoteFound from "./page/page-note-found";
+import pageNoteFound from "./page/page-not-found";
 import productEdit from "./page/product-edit";
+import postDetail from "./page/post-detail";
+import postList from "./page/post-list";
+import Login from "./page/Login";
+import PrivateRoute from "./component/PrivateRoute";
+
 
 
 const App: FunctionComponent = () => {
@@ -14,9 +19,12 @@ const App: FunctionComponent = () => {
         <NavbarComponent/>
       <Switch>
           <Route exact path="/" component={ProductList} />
+          <Route exact path="/login" component={Login} />
           <Route exact path="/products" component={ProductList} />
           <Route path="/product/:id" component={ProductDetail} />
           <Route exact path="/products/edit" component={productEdit} />
+          <PrivateRoute exact path="/post/:id" component={postDetail} />
+          <PrivateRoute exact path="/posts" component={postList} />
           <Route component={pageNoteFound}/>
       </Switch>
     </Router>
