@@ -10,7 +10,7 @@ export default class AuthenticationService {
         //const isAuthenticated = (username === 'pikachu' && password === 'pikachu');
         let authen = new Authentication(username, password);
 
-        return fetch(`http://localhost:9090/auth`, {
+        return fetch(`http://localhost:8080/api/v1/auth/login/demo`, {
             method: 'POST',
             body: JSON.stringify(authen),
             headers: { 'Content-Type': 'application/json'}
