@@ -9,6 +9,7 @@ import postDetail from "./page/post-detail";
 import postList from "./page/post-list";
 import Login from "./page/Login";
 import PrivateRoute from "./component/PrivateRoute";
+import AddressList from "./page/address-list";
 
 
 
@@ -23,6 +24,7 @@ const App: FunctionComponent = () => {
           <Route exact path="/products" component={ProductList} />
           <Route path="/product/:id" component={ProductDetail} />
           <Route exact path="/products/edit" component={productEdit} />
+          <Route exact path="/addresses" component={AddressList} />
           <PrivateRoute exact path="/post/:id" component={postDetail} />
           <PrivateRoute exact path="/posts" component={postList} />
           <Route component={pageNoteFound}/>
